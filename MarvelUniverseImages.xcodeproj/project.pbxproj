@@ -93,6 +93,7 @@
 		06A00AF220371E79009EABF4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				06CE3B93203F5EC900DCBD92 /* CustomCells */,
 				06A00ADC20363799009EABF4 /* MainViewController.m */,
 				06A00ADB20363799009EABF4 /* MainViewController.h */,
 				06CE3B90203F5DAA00DCBD92 /* DetailViewController.h */,
@@ -114,6 +115,13 @@
 			children = (
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		06CE3B93203F5EC900DCBD92 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

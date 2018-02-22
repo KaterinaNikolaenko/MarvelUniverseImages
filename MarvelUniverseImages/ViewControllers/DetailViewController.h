@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Character.h"
 
 @interface DetailViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@property (assign) Character *currentCharacter;
 
 @end

@@ -49,6 +49,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="HMZ-8H-vz0"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Fml-lY-myS"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -78,9 +79,34 @@
                     <view key="view" contentMode="scaleToFill" id="1n2-nm-mFe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sgb-u1-8wH">
+                                <rect key="frame" x="62.5" y="104" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="3xF-zp-zR9"/>
+                                    <constraint firstAttribute="width" constant="250" id="GQ3-sv-hbn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47C-rE-tTn">
+                                <rect key="frame" x="160" y="374" width="56.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Sgb-u1-8wH" firstAttribute="centerX" secondItem="1n2-nm-mFe" secondAttribute="centerX" id="1h7-Gw-HW7"/>
+                            <constraint firstItem="Sgb-u1-8wH" firstAttribute="top" secondItem="FwM-i3-i6Y" secondAttribute="top" constant="40" id="9Lr-U4-9QD"/>
+                            <constraint firstItem="47C-rE-tTn" firstAttribute="centerX" secondItem="1n2-nm-mFe" secondAttribute="centerX" id="MfR-4T-Fbn"/>
+                            <constraint firstItem="47C-rE-tTn" firstAttribute="top" secondItem="Sgb-u1-8wH" secondAttribute="bottom" constant="20" id="r1B-BP-NXZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FwM-i3-i6Y"/>
                     </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="Sgb-u1-8wH" id="MwY-um-lYq"/>
+                        <outlet property="nameLabel" destination="47C-rE-tTn" id="cOB-Ge-RXU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ij0-LS-yLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
