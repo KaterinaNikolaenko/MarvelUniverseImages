@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "DetailViewController.h"
 #import "Character.h"
+#import "CharacterTableViewCell.h"
 
 @implementation MainViewController
 
@@ -58,13 +59,22 @@
 {
     static NSString *cellIdentifier = @"Cell";
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
+    CharacterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     Character *character = (self.arrayCharacters)[indexPath.row];
-    cell.textLabel.text = character.name;
-    cell.detailTextLabel.text = character.descriptionCharacter;
+    cell.nameLabel.text = character.name;
+    cell.descriptionLabel.text = character.descriptionCharacter;
+    NSURL *imgUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@",character.avatarUrl]];
+    dispatch_queue_t q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+    dispatch_async(q, ^{
+        NSData *data = [NSData dataWithContentsOfURL:imgUrl];
+        UIImage *img = [[UIImage alloc] initWithData:data];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [cell.avatarImageView setImage:img];
+        });
+    });
+
     cell.accessoryType = YES;
     return cell;
 }
@@ -75,6 +85,11 @@
 {
     Character *character = (self.arrayCharacters)[indexPath.row];
     [self performSegueWithIdentifier:@"toDetails" sender: character];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
 }
 
 @end

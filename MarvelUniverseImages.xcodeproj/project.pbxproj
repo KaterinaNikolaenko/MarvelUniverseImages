@@ -16,6 +16,7 @@
 		06A00AEB20363799009EABF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A00AEA20363799009EABF4 /* main.m */; };
 		06A00AF920374868009EABF4 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A00AF820374868009EABF4 /* Character.m */; };
 		06CE3B92203F5DAA00DCBD92 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3B91203F5DAA00DCBD92 /* DetailViewController.m */; };
+		06CE3B96203F6D8A00DCBD92 /* CharacterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3B95203F6D8A00DCBD92 /* CharacterTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		06A00AF820374868009EABF4 /* Character.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
 		06CE3B90203F5DAA00DCBD92 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		06CE3B91203F5DAA00DCBD92 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		06CE3B94203F6D8A00DCBD92 /* CharacterTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterTableViewCell.h; sourceTree = "<group>"; };
+		06CE3B95203F6D8A00DCBD92 /* CharacterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharacterTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 		06CE3B93203F5EC900DCBD92 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				06CE3B94203F6D8A00DCBD92 /* CharacterTableViewCell.h */,
+				06CE3B95203F6D8A00DCBD92 /* CharacterTableViewCell.m */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 				06A00ADD20363799009EABF4 /* MainViewController.m in Sources */,
 				06A00AEB20363799009EABF4 /* main.m in Sources */,
 				06A00ADA20363799009EABF4 /* AppDelegate.m in Sources */,
+				06CE3B96203F6D8A00DCBD92 /* CharacterTableViewCell.m in Sources */,
 				06CE3B92203F5DAA00DCBD92 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
