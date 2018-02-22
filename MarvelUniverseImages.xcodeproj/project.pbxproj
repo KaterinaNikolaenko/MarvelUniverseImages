@@ -14,6 +14,8 @@
 		06A00AE520363799009EABF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A00AE420363799009EABF4 /* Assets.xcassets */; };
 		06A00AE820363799009EABF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A00AE620363799009EABF4 /* LaunchScreen.storyboard */; };
 		06A00AEB20363799009EABF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A00AEA20363799009EABF4 /* main.m */; };
+		06A00AF920374868009EABF4 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A00AF820374868009EABF4 /* Character.m */; };
+		06CE3B92203F5DAA00DCBD92 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3B91203F5DAA00DCBD92 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		06A00AE720363799009EABF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06A00AE920363799009EABF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06A00AEA20363799009EABF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		06A00AF720374868009EABF4 /* Character.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
+		06A00AF820374868009EABF4 /* Character.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
+		06CE3B90203F5DAA00DCBD92 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		06CE3B91203F5DAA00DCBD92 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,8 @@
 		06A00AF120371E66009EABF4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				06A00AF720374868009EABF4 /* Character.h */,
+				06A00AF820374868009EABF4 /* Character.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -87,6 +95,8 @@
 			children = (
 				06A00ADC20363799009EABF4 /* MainViewController.m */,
 				06A00ADB20363799009EABF4 /* MainViewController.h */,
+				06CE3B90203F5DAA00DCBD92 /* DetailViewController.h */,
+				06CE3B91203F5DAA00DCBD92 /* DetailViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -178,9 +188,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				06A00AE320363799009EABF4 /* MarvelUniverseImages.xcdatamodeld in Sources */,
+				06A00AF920374868009EABF4 /* Character.m in Sources */,
 				06A00ADD20363799009EABF4 /* MainViewController.m in Sources */,
 				06A00AEB20363799009EABF4 /* main.m in Sources */,
 				06A00ADA20363799009EABF4 /* AppDelegate.m in Sources */,
+				06CE3B92203F5DAA00DCBD92 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,21 +7,24 @@
 //
 
 #import "MainViewController.h"
-
-@interface MainViewController ()
-
-{
-NSArray *name;
-}
-
-@end
+#import "Character.h"
 
 @implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    name = [[NSArray alloc]initWithObjects:@"Mobiles", @"Costumes", @"Shoes", nil];
+    self.arrayCharacters = [[NSMutableArray alloc] init];
+    Character *character = [[Character alloc] init];
+    character.name = @"Dhoom";
+    character.descriptionCharacter = @"reteyeueiieieieueeytetete";
+    [self.arrayCharacters addObject:character];
+    
+    character = [[Character alloc] init];
+    character.name = @"DedhIshquiya";
+    character.descriptionCharacter = @"dhjksdjksdhdshfjhdhsjkd";
+    [self.arrayCharacters addObject:character];
+    
     UIEdgeInsets inset = UIEdgeInsetsMake(20, 0, 0, 0);
     
     self.tableView.contentInset = inset;
@@ -39,7 +42,7 @@ NSArray *name;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return name.count;
+    return _arrayCharacters.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -50,8 +53,9 @@ NSArray *name;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    cell.textLabel.text = [name objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
+    Character *character = (self.arrayCharacters)[indexPath.row];
+    cell.textLabel.text = character.name;
+    cell.detailTextLabel.text = character.descriptionCharacter;
 
     return cell;
 }
