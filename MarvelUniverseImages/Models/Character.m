@@ -17,7 +17,12 @@
         self.idCharacter = [responseObject objectForKey:@"id"];
         self.name = [responseObject objectForKey:@"name"];
         self.descriptionCharacter = [responseObject objectForKey:@"description"];
-        self.avatarUrl = [responseObject objectForKey:@"path"]; //!! + .jpg
+        
+        NSDictionary* responseThumbnail = [responseObject objectForKey:@"thumbnail"];
+        NSString* responsePath = [responseThumbnail objectForKey:@"path"];
+        NSString* responseExtension = [responseThumbnail objectForKey:@"extension"];
+
+        self.avatarUrl = [NSString stringWithFormat: @"%@.%@", responsePath, responseExtension];
     }
     return self;
 }
