@@ -48,6 +48,13 @@
     destinationViewController.currentCharacter = sender;
 }
 
+#pragma mark - API
+
+-(void) getCharacterFromServer {
+    
+}
+
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

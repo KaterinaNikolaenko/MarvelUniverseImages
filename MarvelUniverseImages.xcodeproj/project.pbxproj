@@ -17,6 +17,7 @@
 		06A00AF920374868009EABF4 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A00AF820374868009EABF4 /* Character.m */; };
 		06CE3B92203F5DAA00DCBD92 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3B91203F5DAA00DCBD92 /* DetailViewController.m */; };
 		06CE3B96203F6D8A00DCBD92 /* CharacterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3B95203F6D8A00DCBD92 /* CharacterTableViewCell.m */; };
+		DC76E285C5EC7B25C074CBCA /* libPods-MarvelUniverseImages.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 445E543F893977503893D4BB /* libPods-MarvelUniverseImages.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,9 @@
 		06CE3B91203F5DAA00DCBD92 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		06CE3B94203F6D8A00DCBD92 /* CharacterTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterTableViewCell.h; sourceTree = "<group>"; };
 		06CE3B95203F6D8A00DCBD92 /* CharacterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharacterTableViewCell.m; sourceTree = "<group>"; };
+		445E543F893977503893D4BB /* libPods-MarvelUniverseImages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarvelUniverseImages.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45634831BD80B7620BE00ACC /* Pods-MarvelUniverseImages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelUniverseImages.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelUniverseImages/Pods-MarvelUniverseImages.release.xcconfig"; sourceTree = "<group>"; };
+		BDD32A8F19063D6887A8901A /* Pods-MarvelUniverseImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelUniverseImages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelUniverseImages/Pods-MarvelUniverseImages.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC76E285C5EC7B25C074CBCA /* libPods-MarvelUniverseImages.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +60,8 @@
 			children = (
 				06A00AD720363799009EABF4 /* MarvelUniverseImages */,
 				06A00AD620363799009EABF4 /* Products */,
+				11D8D64695D7F79D925D5E4F /* Pods */,
+				FA0D3D951241F1A5F479F201 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +136,23 @@
 			path = CustomCells;
 			sourceTree = "<group>";
 		};
+		11D8D64695D7F79D925D5E4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BDD32A8F19063D6887A8901A /* Pods-MarvelUniverseImages.debug.xcconfig */,
+				45634831BD80B7620BE00ACC /* Pods-MarvelUniverseImages.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA0D3D951241F1A5F479F201 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				445E543F893977503893D4BB /* libPods-MarvelUniverseImages.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,9 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06A00AEE20363799009EABF4 /* Build configuration list for PBXNativeTarget "MarvelUniverseImages" */;
 			buildPhases = (
+				1A11FC9E6996E98923EA7A00 /* [CP] Check Pods Manifest.lock */,
 				06A00AD120363799009EABF4 /* Sources */,
 				06A00AD220363799009EABF4 /* Frameworks */,
 				06A00AD320363799009EABF4 /* Resources */,
+				DFAC248F9EB895D30FE8D1BA /* [CP] Embed Pods Frameworks */,
+				ED98AA4C553FFD246ABF99C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,6 +221,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A11FC9E6996E98923EA7A00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarvelUniverseImages-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFAC248F9EB895D30FE8D1BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MarvelUniverseImages/Pods-MarvelUniverseImages-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED98AA4C553FFD246ABF99C5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MarvelUniverseImages/Pods-MarvelUniverseImages-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		06A00AD120363799009EABF4 /* Sources */ = {
@@ -338,6 +416,7 @@
 		};
 		06A00AEF20363799009EABF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDD32A8F19063D6887A8901A /* Pods-MarvelUniverseImages.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -352,6 +431,7 @@
 		};
 		06A00AF020363799009EABF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45634831BD80B7620BE00ACC /* Pods-MarvelUniverseImages.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
