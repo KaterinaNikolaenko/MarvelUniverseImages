@@ -18,6 +18,7 @@
 		06CE3B92203F5DAA00DCBD92 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3B91203F5DAA00DCBD92 /* DetailViewController.m */; };
 		06CE3B96203F6D8A00DCBD92 /* CharacterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3B95203F6D8A00DCBD92 /* CharacterTableViewCell.m */; };
 		06CE3B992042AFE000DCBD92 /* ServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3B982042AFE000DCBD92 /* ServerManager.m */; };
+		06CE3BA02042F05500DCBD92 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3B9F2042F05500DCBD92 /* NSString+MD5.m */; };
 		DC76E285C5EC7B25C074CBCA /* libPods-MarvelUniverseImages.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 445E543F893977503893D4BB /* libPods-MarvelUniverseImages.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		06CE3B95203F6D8A00DCBD92 /* CharacterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharacterTableViewCell.m; sourceTree = "<group>"; };
 		06CE3B972042AFE000DCBD92 /* ServerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServerManager.h; sourceTree = "<group>"; };
 		06CE3B982042AFE000DCBD92 /* ServerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServerManager.m; sourceTree = "<group>"; };
+		06CE3B9E2042F05500DCBD92 /* NSString+MD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		06CE3B9F2042F05500DCBD92 /* NSString+MD5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		445E543F893977503893D4BB /* libPods-MarvelUniverseImages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarvelUniverseImages.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45634831BD80B7620BE00ACC /* Pods-MarvelUniverseImages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelUniverseImages.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelUniverseImages/Pods-MarvelUniverseImages.release.xcconfig"; sourceTree = "<group>"; };
 		BDD32A8F19063D6887A8901A /* Pods-MarvelUniverseImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelUniverseImages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelUniverseImages/Pods-MarvelUniverseImages.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 		06A00AF320371E8B009EABF4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				06CE3B9A2042EFDD00DCBD92 /* Hash */,
 				06A00AF420371E99009EABF4 /* Networking */,
 			);
 			path = Services;
@@ -139,6 +143,15 @@
 				06CE3B95203F6D8A00DCBD92 /* CharacterTableViewCell.m */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		06CE3B9A2042EFDD00DCBD92 /* Hash */ = {
+			isa = PBXGroup;
+			children = (
+				06CE3B9E2042F05500DCBD92 /* NSString+MD5.h */,
+				06CE3B9F2042F05500DCBD92 /* NSString+MD5.m */,
+			);
+			path = Hash;
 			sourceTree = "<group>";
 		};
 		11D8D64695D7F79D925D5E4F /* Pods */ = {
@@ -286,6 +299,7 @@
 				06A00AE320363799009EABF4 /* MarvelUniverseImages.xcdatamodeld in Sources */,
 				06A00AF920374868009EABF4 /* Character.m in Sources */,
 				06A00ADD20363799009EABF4 /* MainViewController.m in Sources */,
+				06CE3BA02042F05500DCBD92 /* NSString+MD5.m in Sources */,
 				06A00AEB20363799009EABF4 /* main.m in Sources */,
 				06CE3B992042AFE000DCBD92 /* ServerManager.m in Sources */,
 				06A00ADA20363799009EABF4 /* AppDelegate.m in Sources */,

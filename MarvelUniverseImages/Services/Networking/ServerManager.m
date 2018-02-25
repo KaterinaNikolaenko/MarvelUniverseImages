@@ -49,12 +49,11 @@
      @(ts), @"ts",
      apikey, @"apikey",
      hash, @"hash", nil];
+    
     [self.requestManager GET:@"characters" parameters:parameters progress:nil success:^(NSURLSessionTask *task, id responseObject) {
       
         NSDictionary* responseData = [responseObject objectForKey:@"data"];
         NSArray* dictsArray = [responseData objectForKey:@"results"];
-       
-//        NSLog(@"responseDictNew: %@", dictsArray);
         
         NSMutableArray* objectsArray = [NSMutableArray array];
         for (NSDictionary* dict in dictsArray) {
