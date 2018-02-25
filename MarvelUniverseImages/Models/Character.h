@@ -10,9 +10,11 @@
 
 @interface Character : NSObject
 
-@property (nonatomic, assign) int *idCharacter;
+@property (nonatomic, assign) NSString *idCharacter;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *descriptionCharacter;
 @property (nonatomic, strong) NSString *avatarUrl;
+
+- (id) initWithServerResponse:(NSDictionary*) responseObject;
 
 @end

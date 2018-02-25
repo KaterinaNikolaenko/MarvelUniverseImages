@@ -10,8 +10,12 @@
 #import "DetailViewController.h"
 #import "Character.h"
 #import "CharacterTableViewCell.h"
+#import "ServerManager.h"
 
 @implementation MainViewController
+
+static NSString *apikey = @"8a500a4f258ff08764dc94dd384f89ba";
+static NSString *hash = @"628edffe7332977ebb65762bbadf241f";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,6 +39,8 @@
     self.tableView.scrollIndicatorInsets = inset;
     
     self.tableView.dataSource = self;
+    
+    [self getCharacterFromServer];
 }
 
 
@@ -51,7 +57,14 @@
 #pragma mark - API
 
 -(void) getCharacterFromServer {
-    
+    [[ServerManager sharedManager] getCharacterWithApikey:apikey hash:hash ts:1 onSuccess:^(NSArray *characters) {
+        
+        [self.arrayCharacters addObjectsFromArray:characters];
+        [self.tableView reloadData];
+        
+    } onFailure:^(NSError *error, NSInteger statusCode) {
+        NSLog(@"error = %@ code = %ld", [error localizedDescription], (long)statusCode);
+    }];
 }
 
 
@@ -78,7 +91,11 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            [cell.avatarImageView setImage:img];
+            if (img == nil) {
+                 cell.avatarImageView.image = [UIImage imageNamed:@"placeHolder"];
+            } else {
+                [cell.avatarImageView setImage:img];
+            }
         });
     });
 
