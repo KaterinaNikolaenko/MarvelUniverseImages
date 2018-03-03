@@ -8,7 +8,7 @@
 
 #import "ServerManager.h"
 #import "AFNetworking.h"
-#import "Character.h"
+#import "Character+CoreDataClass.h"
 
 @interface ServerManager()
 
@@ -34,6 +34,7 @@
     if (self) {
         NSURL* url = [NSURL URLWithString:@"https://gateway.marvel.com:443/v1/public/"];
         self.requestManager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
+         _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     }
     return self;
 }
@@ -51,14 +52,42 @@
      hash, @"hash", nil];
     
     [self.requestManager GET:@"characters" parameters:parameters progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-      
+//        // Create Fetch Request
+//        let fetchRequest = NSFetchRequest(entityName: "Item")
+//        // Create Batch Delete Request
+//        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+//        do {
+//            try managedObjectContext.executeRequest(batchDeleteRequest)
+//        } catch {
+//            // Error Handling
+//        }
+        
+        NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Character"];
+        NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
+        
+        NSError *deleteError = nil;
+        [_appDelegate.coordinator executeRequest:delete withContext:_appDelegate.managedObjectContext error:&deleteError];
+        
         NSDictionary* responseData = [responseObject objectForKey:@"data"];
         NSArray* dictsArray = [responseData objectForKey:@"results"];
         
         NSMutableArray* objectsArray = [NSMutableArray array];
         for (NSDictionary* dict in dictsArray) {
-            Character* character = [[Character alloc] initWithServerResponse:dict];
+            Character *character = [NSEntityDescription insertNewObjectForEntityForName:@"Character" inManagedObjectContext:_appDelegate.managedObjectContext];
+            character.idCharacter = [[dict objectForKey:@"id"] integerValue];
+            character.name = [dict objectForKey:@"name"];
+            character.descriptionCharacter = [dict objectForKey:@"description"];
+            
+            NSDictionary* responseThumbnail = [dict objectForKey:@"thumbnail"];
+            NSString* responsePath = [responseThumbnail objectForKey:@"path"];
+            NSString* responseExtension = [responseThumbnail objectForKey:@"extension"];
+            
+            character.avatarUrl = [NSString stringWithFormat: @"%@.%@", responsePath, responseExtension];
             [objectsArray addObject:character];
+            NSError *error = nil;
+            if (![_appDelegate.managedObjectContext save:&error]) {
+                NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+            }
         }
         
         if (success) {

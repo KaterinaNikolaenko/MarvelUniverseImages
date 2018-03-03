@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 #import "DetailViewController.h"
-#import "Character.h"
+#import "Character+CoreDataClass.h"
 #import "CharacterTableViewCell.h"
 #import "ServerManager.h"
 #import "NSString+MD5.h"
@@ -16,16 +16,17 @@
 
 @implementation MainViewController
 
-static NSString *apiKeyPublic = @"8a500a4f258ff08764dc94dd384f89ba";
-static NSString *apiKeyPrivate = @"1";
+NSString *const ApiKeyPublic = @"8a500a4f258ff08764dc94dd384f89ba";
+NSString *const ApiKeyPrivate = @"a3ee9eb48cfcfa94b61e5ad5062cbd1ee1e93d8d";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.arrayCharacters = [[NSMutableArray alloc] init];
     self.tableView.dataSource = self;
+    _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    [self getCharacterFromServer];
+    [self getCharacterFromCoreData];
 }
 
 
@@ -43,11 +44,11 @@ static NSString *apiKeyPrivate = @"1";
 
 -(void) getCharacterFromServer {
     
-    NSString *hashString = [NSString stringWithFormat: @"1%@%@", apiKeyPrivate, apiKeyPublic];
+    NSString *hashString = [NSString stringWithFormat: @"1%@%@", ApiKeyPrivate, ApiKeyPublic];
     
-    [[ServerManager sharedManager] getCharacterWithApikey:apiKeyPublic hash:[hashString MD5] ts:1 onSuccess:^(NSArray *characters) {
+    [[ServerManager sharedManager] getCharacterWithApikey:ApiKeyPublic hash:[hashString MD5] ts:1 onSuccess:^(NSArray *characters) {
         
-        [self.arrayCharacters addObjectsFromArray:characters];
+        self.arrayCharacters = characters;
         [self.tableView reloadData];
         
     } onFailure:^(NSError *error, NSInteger statusCode) {
@@ -55,6 +56,20 @@ static NSString *apiKeyPrivate = @"1";
     }];
 }
 
+#pragma mark - Get data from Core data
+
+-(void) getCharacterFromCoreData {
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"Character" inManagedObjectContext:_appDelegate.managedObjectContext];
+    [request setEntity:description];
+    
+    NSError *requestError = nil;
+    NSMutableArray *requestArray = [_appDelegate.managedObjectContext executeFetchRequest:request error:&requestError];
+    self.arrayCharacters = requestArray;
+    [self.tableView reloadData];
+    [self getCharacterFromServer];
+}
 
 #pragma mark - UITableViewDataSource
 

@@ -14,12 +14,16 @@
 		06A00AE520363799009EABF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A00AE420363799009EABF4 /* Assets.xcassets */; };
 		06A00AE820363799009EABF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A00AE620363799009EABF4 /* LaunchScreen.storyboard */; };
 		06A00AEB20363799009EABF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A00AEA20363799009EABF4 /* main.m */; };
-		06A00AF920374868009EABF4 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A00AF820374868009EABF4 /* Character.m */; };
+		06A00AF920374868009EABF4 /* CharacterMy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A00AF820374868009EABF4 /* CharacterMy.m */; };
 		06CE3B92203F5DAA00DCBD92 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3B91203F5DAA00DCBD92 /* DetailViewController.m */; };
 		06CE3B96203F6D8A00DCBD92 /* CharacterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3B95203F6D8A00DCBD92 /* CharacterTableViewCell.m */; };
 		06CE3B992042AFE000DCBD92 /* ServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3B982042AFE000DCBD92 /* ServerManager.m */; };
 		06CE3BA02042F05500DCBD92 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3B9F2042F05500DCBD92 /* NSString+MD5.m */; };
-		DC76E285C5EC7B25C074CBCA /* libPods-MarvelUniverseImages.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 445E543F893977503893D4BB /* libPods-MarvelUniverseImages.a */; };
+		06CE3BC92044AA1400DCBD92 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CE3BC82044AA1400DCBD92 /* CoreLocation.framework */; };
+		06CE3BDD2044BA2300DCBD92 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CE3BC62044A9F600DCBD92 /* CoreData.framework */; };
+		06CE3BE82044BD8300DCBD92 /* Character+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3BE62044BD8300DCBD92 /* Character+CoreDataClass.m */; };
+		06CE3BE92044BD8300DCBD92 /* Character+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3BE72044BD8300DCBD92 /* Character+CoreDataProperties.m */; };
+		DC76E285C5EC7B25C074CBCA /* libPods-MarvelUniverseImages.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 445E543F893977503893D4BB /* libPods-MarvelUniverseImages.a */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +38,8 @@
 		06A00AE720363799009EABF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06A00AE920363799009EABF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06A00AEA20363799009EABF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		06A00AF720374868009EABF4 /* Character.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
-		06A00AF820374868009EABF4 /* Character.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
+		06A00AF720374868009EABF4 /* CharacterMy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterMy.h; sourceTree = "<group>"; };
+		06A00AF820374868009EABF4 /* CharacterMy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharacterMy.m; sourceTree = "<group>"; };
 		06CE3B90203F5DAA00DCBD92 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		06CE3B91203F5DAA00DCBD92 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		06CE3B94203F6D8A00DCBD92 /* CharacterTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterTableViewCell.h; sourceTree = "<group>"; };
@@ -44,6 +48,12 @@
 		06CE3B982042AFE000DCBD92 /* ServerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServerManager.m; sourceTree = "<group>"; };
 		06CE3B9E2042F05500DCBD92 /* NSString+MD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		06CE3B9F2042F05500DCBD92 /* NSString+MD5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		06CE3BC62044A9F600DCBD92 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		06CE3BC82044AA1400DCBD92 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		06CE3BE42044BD8300DCBD92 /* Character+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Character+CoreDataProperties.h"; sourceTree = "<group>"; };
+		06CE3BE52044BD8300DCBD92 /* Character+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Character+CoreDataClass.h"; sourceTree = "<group>"; };
+		06CE3BE62044BD8300DCBD92 /* Character+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Character+CoreDataClass.m"; sourceTree = "<group>"; };
+		06CE3BE72044BD8300DCBD92 /* Character+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Character+CoreDataProperties.m"; sourceTree = "<group>"; };
 		445E543F893977503893D4BB /* libPods-MarvelUniverseImages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarvelUniverseImages.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45634831BD80B7620BE00ACC /* Pods-MarvelUniverseImages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelUniverseImages.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelUniverseImages/Pods-MarvelUniverseImages.release.xcconfig"; sourceTree = "<group>"; };
 		BDD32A8F19063D6887A8901A /* Pods-MarvelUniverseImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelUniverseImages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelUniverseImages/Pods-MarvelUniverseImages.debug.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06CE3BDD2044BA2300DCBD92 /* CoreData.framework in Frameworks */,
+				06CE3BC92044AA1400DCBD92 /* CoreLocation.framework in Frameworks */,
 				DC76E285C5EC7B25C074CBCA /* libPods-MarvelUniverseImages.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,8 +112,12 @@
 		06A00AF120371E66009EABF4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				06A00AF720374868009EABF4 /* Character.h */,
-				06A00AF820374868009EABF4 /* Character.m */,
+				06CE3BE42044BD8300DCBD92 /* Character+CoreDataProperties.h */,
+				06CE3BE52044BD8300DCBD92 /* Character+CoreDataClass.h */,
+				06CE3BE62044BD8300DCBD92 /* Character+CoreDataClass.m */,
+				06CE3BE72044BD8300DCBD92 /* Character+CoreDataProperties.m */,
+				06A00AF720374868009EABF4 /* CharacterMy.h */,
+				06A00AF820374868009EABF4 /* CharacterMy.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +182,8 @@
 		FA0D3D951241F1A5F479F201 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06CE3BC82044AA1400DCBD92 /* CoreLocation.framework */,
+				06CE3BC62044A9F600DCBD92 /* CoreData.framework */,
 				445E543F893977503893D4BB /* libPods-MarvelUniverseImages.a */,
 			);
 			name = Frameworks;
@@ -297,12 +315,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				06A00AE320363799009EABF4 /* MarvelUniverseImages.xcdatamodeld in Sources */,
-				06A00AF920374868009EABF4 /* Character.m in Sources */,
+				06A00AF920374868009EABF4 /* CharacterMy.m in Sources */,
 				06A00ADD20363799009EABF4 /* MainViewController.m in Sources */,
 				06CE3BA02042F05500DCBD92 /* NSString+MD5.m in Sources */,
 				06A00AEB20363799009EABF4 /* main.m in Sources */,
+				06CE3BE82044BD8300DCBD92 /* Character+CoreDataClass.m in Sources */,
 				06CE3B992042AFE000DCBD92 /* ServerManager.m in Sources */,
 				06A00ADA20363799009EABF4 /* AppDelegate.m in Sources */,
+				06CE3BE92044BD8300DCBD92 /* Character+CoreDataProperties.m in Sources */,
 				06CE3B96203F6D8A00DCBD92 /* CharacterTableViewCell.m in Sources */,
 				06CE3B92203F5DAA00DCBD92 /* DetailViewController.m in Sources */,
 			);

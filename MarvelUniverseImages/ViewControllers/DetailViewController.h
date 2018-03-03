@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Character.h"
+#import "Character+CoreDataClass.h"
 
 @interface DetailViewController : UIViewController
 

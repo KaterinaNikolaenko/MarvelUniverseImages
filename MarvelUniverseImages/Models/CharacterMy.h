@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Character : NSObject
+@interface CharacterMy : NSObject
 
-@property (nonatomic, assign) NSString *idCharacter;
+@property (nonatomic, assign) NSString *idCharacter; 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *descriptionCharacter;
 @property (nonatomic, strong) NSString *avatarUrl;

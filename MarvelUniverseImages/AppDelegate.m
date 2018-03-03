@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Character+CoreDataClass.h"
 
 @interface AppDelegate ()
 
@@ -14,9 +15,39 @@
 
 @implementation AppDelegate
 
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize coordinator = _coordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+//     Create a new managed object
+//    NSManagedObject *newCharacter = [NSEntityDescription insertNewObjectForEntityForName:@"Character" inManagedObjectContext:self.managedObjectContext];
+//    [newCharacter setValue:@(123) forKey:@"idCharacter"];
+//    [newCharacter setValue:@"Daniel" forKey:@"name"];
+//    [newCharacter setValue:@"djbjdsbjbndfjdnf" forKey:@"descriptionCharacter"];
+//    [newCharacter setValue:@"https://lalala.jpg" forKey:@"avatarUrl"];
+//
+//    NSError *error = nil;
+//    if (![self.managedObjectContext save:&error]) {
+//        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+//    }
+    
+    // Fetch the Characters from persistent data store
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"Character" inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:description];
+
+    NSError *requestError = nil;
+    NSArray *requestArray = [self.managedObjectContext executeFetchRequest:request error:&requestError];
+    if (requestError) {
+        NSLog(@"%@", [requestError localizedDescription]);
+    }
+
+    for (Character *object in requestArray) {
+        NSLog(@"%@ %@ %@", object.name, object.descriptionCharacter, object.avatarUrl);
+    }
+    
     return YES;
 }
 
@@ -80,6 +111,64 @@
     }
     
     return _persistentContainer;
+}
+
+- (NSManagedObjectModel *)managedObjectModel
+{
+    if (_managedObjectModel != nil) {
+        return _managedObjectModel;
+    }
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"MarvelUniverseImages" withExtension:@"momd"];
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return _managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator *)coordinator
+{
+    if(nil != _coordinator)
+        return _coordinator;
+    
+    NSURL *storeURL = [[[[NSFileManager defaultManager]
+                         URLsForDirectory:NSDocumentDirectory
+                         inDomains:NSUserDomainMask]
+                        lastObject]
+                       URLByAppendingPathComponent:@"MarvelUniverseImages.sqlite"];
+    
+    _coordinator = [[NSPersistentStoreCoordinator alloc]
+                    initWithManagedObjectModel:self.managedObjectModel];
+    
+    NSError *error = nil;
+    if(![_coordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                   configuration:nil
+                                             URL:storeURL
+                                         options:nil
+                                           error:&error]){
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    return _coordinator;
+}
+
+- (NSManagedObjectContext *)managedObjectContext
+{
+    if(nil != _managedObjectContext)
+        return _managedObjectContext;
+    
+    NSPersistentStoreCoordinator *storeCoordinator = self.coordinator;
+    
+    if(nil != storeCoordinator){
+//        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+        [_managedObjectContext setPersistentStoreCoordinator:storeCoordinator];
+    }
+    
+    return _managedObjectContext;
+}
+
+- (NSURL*)applicationDocumentsDirectory {
+    // The directory the application uses to store the Core Data store file. This code uses a directory named "com.mindstick.CoreDataSample" in the application's documents directory.
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 #pragma mark - Core Data Saving support

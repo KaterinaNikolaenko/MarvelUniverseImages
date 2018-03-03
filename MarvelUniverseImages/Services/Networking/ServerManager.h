@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppDelegate.h"
 
 @interface ServerManager : NSObject
 
@@ -17,5 +18,7 @@
                            ts:(NSInteger) ts
                       onSuccess: (void(^)(NSArray* sharacters)) success
                       onFailure: (void(^)(NSError* error, NSInteger statusCode)) failure;
+
+@property(retain,nonatomic)AppDelegate *appDelegate;
 
 @end
