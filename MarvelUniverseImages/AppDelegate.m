@@ -20,33 +20,6 @@
 @synthesize coordinator = _coordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-//     Create a new managed object
-//    NSManagedObject *newCharacter = [NSEntityDescription insertNewObjectForEntityForName:@"Character" inManagedObjectContext:self.managedObjectContext];
-//    [newCharacter setValue:@(123) forKey:@"idCharacter"];
-//    [newCharacter setValue:@"Daniel" forKey:@"name"];
-//    [newCharacter setValue:@"djbjdsbjbndfjdnf" forKey:@"descriptionCharacter"];
-//    [newCharacter setValue:@"https://lalala.jpg" forKey:@"avatarUrl"];
-//
-//    NSError *error = nil;
-//    if (![self.managedObjectContext save:&error]) {
-//        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
-//    }
-    
-    // Fetch the Characters from persistent data store
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *description = [NSEntityDescription entityForName:@"Character" inManagedObjectContext:self.managedObjectContext];
-    [request setEntity:description];
-
-    NSError *requestError = nil;
-    NSArray *requestArray = [self.managedObjectContext executeFetchRequest:request error:&requestError];
-    if (requestError) {
-        NSLog(@"%@", [requestError localizedDescription]);
-    }
-
-    for (Character *object in requestArray) {
-        NSLog(@"%@ %@ %@", object.name, object.descriptionCharacter, object.avatarUrl);
-    }
     
     return YES;
 }

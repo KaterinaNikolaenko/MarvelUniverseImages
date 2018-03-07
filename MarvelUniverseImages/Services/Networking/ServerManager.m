@@ -52,15 +52,6 @@
      hash, @"hash", nil];
     
     [self.requestManager GET:@"characters" parameters:parameters progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-//        // Create Fetch Request
-//        let fetchRequest = NSFetchRequest(entityName: "Item")
-//        // Create Batch Delete Request
-//        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-//        do {
-//            try managedObjectContext.executeRequest(batchDeleteRequest)
-//        } catch {
-//            // Error Handling
-//        }
         
         NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Character"];
         NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];

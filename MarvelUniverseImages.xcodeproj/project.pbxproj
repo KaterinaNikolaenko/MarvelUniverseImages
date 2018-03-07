@@ -23,8 +23,20 @@
 		06CE3BDD2044BA2300DCBD92 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CE3BC62044A9F600DCBD92 /* CoreData.framework */; };
 		06CE3BE82044BD8300DCBD92 /* Character+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3BE62044BD8300DCBD92 /* Character+CoreDataClass.m */; };
 		06CE3BE92044BD8300DCBD92 /* Character+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CE3BE72044BD8300DCBD92 /* Character+CoreDataProperties.m */; };
+		06D97874204D9CEE009E6392 /* MarvelUniverseImagesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D97873204D9CEE009E6392 /* MarvelUniverseImagesTests.m */; };
+		06D9787D205005D4009E6392 /* NSURL+URLQueryBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D9787C205005D4009E6392 /* NSURL+URLQueryBuilder.m */; };
 		DC76E285C5EC7B25C074CBCA /* libPods-MarvelUniverseImages.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 445E543F893977503893D4BB /* libPods-MarvelUniverseImages.a */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		06D97876204D9CEE009E6392 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06A00ACD20363799009EABF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06A00AD420363799009EABF4;
+			remoteInfo = MarvelUniverseImages;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		06A00AD520363799009EABF4 /* MarvelUniverseImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelUniverseImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +66,11 @@
 		06CE3BE52044BD8300DCBD92 /* Character+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Character+CoreDataClass.h"; sourceTree = "<group>"; };
 		06CE3BE62044BD8300DCBD92 /* Character+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Character+CoreDataClass.m"; sourceTree = "<group>"; };
 		06CE3BE72044BD8300DCBD92 /* Character+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Character+CoreDataProperties.m"; sourceTree = "<group>"; };
+		06D97871204D9CEE009E6392 /* MarvelUniverseImagesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelUniverseImagesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06D97873204D9CEE009E6392 /* MarvelUniverseImagesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarvelUniverseImagesTests.m; sourceTree = "<group>"; };
+		06D97875204D9CEE009E6392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06D9787B205005D4009E6392 /* NSURL+URLQueryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+URLQueryBuilder.h"; sourceTree = "<group>"; };
+		06D9787C205005D4009E6392 /* NSURL+URLQueryBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+URLQueryBuilder.m"; sourceTree = "<group>"; };
 		445E543F893977503893D4BB /* libPods-MarvelUniverseImages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarvelUniverseImages.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45634831BD80B7620BE00ACC /* Pods-MarvelUniverseImages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelUniverseImages.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelUniverseImages/Pods-MarvelUniverseImages.release.xcconfig"; sourceTree = "<group>"; };
 		BDD32A8F19063D6887A8901A /* Pods-MarvelUniverseImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelUniverseImages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelUniverseImages/Pods-MarvelUniverseImages.debug.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +87,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		06D9786E204D9CEE009E6392 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				06A00AD720363799009EABF4 /* MarvelUniverseImages */,
+				06D97872204D9CEE009E6392 /* MarvelUniverseImagesTests */,
 				06A00AD620363799009EABF4 /* Products */,
 				11D8D64695D7F79D925D5E4F /* Pods */,
 				FA0D3D951241F1A5F479F201 /* Frameworks */,
@@ -87,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				06A00AD520363799009EABF4 /* MarvelUniverseImages.app */,
+				06D97871204D9CEE009E6392 /* MarvelUniverseImagesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,6 +174,8 @@
 			children = (
 				06CE3B972042AFE000DCBD92 /* ServerManager.h */,
 				06CE3B982042AFE000DCBD92 /* ServerManager.m */,
+				06D9787B205005D4009E6392 /* NSURL+URLQueryBuilder.h */,
+				06D9787C205005D4009E6392 /* NSURL+URLQueryBuilder.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -168,6 +196,15 @@
 				06CE3B9F2042F05500DCBD92 /* NSString+MD5.m */,
 			);
 			path = Hash;
+			sourceTree = "<group>";
+		};
+		06D97872204D9CEE009E6392 /* MarvelUniverseImagesTests */ = {
+			isa = PBXGroup;
+			children = (
+				06D97873204D9CEE009E6392 /* MarvelUniverseImagesTests.m */,
+				06D97875204D9CEE009E6392 /* Info.plist */,
+			);
+			path = MarvelUniverseImagesTests;
 			sourceTree = "<group>";
 		};
 		11D8D64695D7F79D925D5E4F /* Pods */ = {
@@ -212,6 +249,24 @@
 			productReference = 06A00AD520363799009EABF4 /* MarvelUniverseImages.app */;
 			productType = "com.apple.product-type.application";
 		};
+		06D97870204D9CEE009E6392 /* MarvelUniverseImagesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06D9787A204D9CEE009E6392 /* Build configuration list for PBXNativeTarget "MarvelUniverseImagesTests" */;
+			buildPhases = (
+				06D9786D204D9CEE009E6392 /* Sources */,
+				06D9786E204D9CEE009E6392 /* Frameworks */,
+				06D9786F204D9CEE009E6392 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06D97877204D9CEE009E6392 /* PBXTargetDependency */,
+			);
+			name = MarvelUniverseImagesTests;
+			productName = MarvelUniverseImagesTests;
+			productReference = 06D97871204D9CEE009E6392 /* MarvelUniverseImagesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -224,6 +279,11 @@
 					06A00AD420363799009EABF4 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					06D97870204D9CEE009E6392 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 06A00AD420363799009EABF4;
 					};
 				};
 			};
@@ -241,6 +301,7 @@
 			projectRoot = "";
 			targets = (
 				06A00AD420363799009EABF4 /* MarvelUniverseImages */,
+				06D97870204D9CEE009E6392 /* MarvelUniverseImagesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -253,6 +314,13 @@
 				06A00AE820363799009EABF4 /* LaunchScreen.storyboard in Resources */,
 				06A00AE520363799009EABF4 /* Assets.xcassets in Resources */,
 				06A00AE020363799009EABF4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06D9786F204D9CEE009E6392 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,12 +391,29 @@
 				06CE3B992042AFE000DCBD92 /* ServerManager.m in Sources */,
 				06A00ADA20363799009EABF4 /* AppDelegate.m in Sources */,
 				06CE3BE92044BD8300DCBD92 /* Character+CoreDataProperties.m in Sources */,
+				06D9787D205005D4009E6392 /* NSURL+URLQueryBuilder.m in Sources */,
 				06CE3B96203F6D8A00DCBD92 /* CharacterTableViewCell.m in Sources */,
 				06CE3B92203F5DAA00DCBD92 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		06D9786D204D9CEE009E6392 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06D97874204D9CEE009E6392 /* MarvelUniverseImagesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		06D97877204D9CEE009E6392 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06A00AD420363799009EABF4 /* MarvelUniverseImages */;
+			targetProxy = 06D97876204D9CEE009E6392 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		06A00ADE20363799009EABF4 /* Main.storyboard */ = {
@@ -484,6 +569,36 @@
 			};
 			name = Release;
 		};
+		06D97878204D9CEE009E6392 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9VD9T9R724;
+				INFOPLIST_FILE = MarvelUniverseImagesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ua.katerinanikolaenko.MarvelUniverseImagesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelUniverseImages.app/MarvelUniverseImages";
+			};
+			name = Debug;
+		};
+		06D97879204D9CEE009E6392 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9VD9T9R724;
+				INFOPLIST_FILE = MarvelUniverseImagesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ua.katerinanikolaenko.MarvelUniverseImagesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelUniverseImages.app/MarvelUniverseImages";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -501,6 +616,15 @@
 			buildConfigurations = (
 				06A00AEF20363799009EABF4 /* Debug */,
 				06A00AF020363799009EABF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06D9787A204D9CEE009E6392 /* Build configuration list for PBXNativeTarget "MarvelUniverseImagesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06D97878204D9CEE009E6392 /* Debug */,
+				06D97879204D9CEE009E6392 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
